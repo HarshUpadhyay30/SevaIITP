@@ -17,7 +17,6 @@ SevaIITP is a comprehensive donation management platform developed for the Natio
 - **Campaign Creation**: Create fundraising campaigns with goals, descriptions, and categories
 - **Progress Tracking**: Monitor campaign progress with visual progress bars
 - **Multiple Categories**: Support for medical, education, disaster relief, and social causes
-- **Payment Integration**: Multiple payment methods including credit/debit cards, UPI, and net banking
 
 ### Item Donations
 - **Campaign Management**: Create and manage item donation campaigns
@@ -32,7 +31,6 @@ SevaIITP is a comprehensive donation management platform developed for the Natio
 
 ### Admin Dashboard
 - **Campaign Management**: Create, view, and delete all types of campaigns
-- **User Management**: Monitor and manage user accounts
 - **Analytics**: Track donation statistics and campaign progress
 - **Cleanup Tools**: Remove completed or expired campaigns
 
@@ -113,21 +111,3 @@ The application uses the following main tables:
 - Email: admin@donation.com
 - Password: admin123
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- National Service Scheme (NSS) IIT Patna
-- All contributors and supporters of the project
-
-## Contact
-
-For any queries or support, please contact:
-- Email: support@sevaiitp.com
-- Website: https://sevaiitp.com
