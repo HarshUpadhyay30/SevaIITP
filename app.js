@@ -123,19 +123,29 @@ app.post('/api/register', async (req, res) => {
         if (!emailRegex.test(email)) {
             return res.status(400).json({ error: 'Invalid email format' });
         }
+
+        // Validate phone number format if provided
+        if (phone) {
+            const phoneRegex = /^\d{10}$/;  // Assumes 10-digit phone number
+            if (!phoneRegex.test(phone)) {
+                return res.status(400).json({ error: 'Phone number must be 10 digits' });
+            }
+        }
     
-        // Check if username or email already exists
+        // Check if username, email, or phone already exists
         const [existingUsers] = await pool.execute(
-            'SELECT id, username, email FROM users WHERE username = ? OR email = ?',
-            [username, email]
+            'SELECT id, username, email, phone FROM users WHERE username = ? OR email = ? OR phone = ?',
+            [username, email, phone]
         );
     
         if (existingUsers.length > 0) {
             const existingUser = existingUsers[0];
             if (existingUser.email === email) {
                 return res.status(400).json({ error: 'Email already registered' });
-            } else {
+            } else if (existingUser.username === username) {
                 return res.status(400).json({ error: 'Username already taken' });
+            } else if (existingUser.phone === phone) {
+                return res.status(400).json({ error: 'Phone number already registered' });
             }
         }
     
